@@ -1,0 +1,132 @@
+{
+  "Firefox": {
+    "RegistrationName": "Firefox.msi",
+    "Url": "https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=fr&_gl=1*lr17ou*_ga*MjIyOTI4NDczLjE2NjA5Mzg0NTA.*_ga_MQ7767QQQW*MTY2MDkzODQ1MC4xLjEuMTY2MDk0MDgwMy4wLjAuMA..",
+    "DownloadText": "Downloading Firefox...",
+    "InstallText": "Installing Firefox...",
+    "InstallationType": "Msiexec",
+    "Arg": "/qn",
+    "IsHtmlParsing": "false",
+    "Balise": ""
+  },
+  "Chrome": {
+    "RegistrationName": "Chrome.msi",
+    "Url": "https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7BFF38AF7D-1E9A-82AF-AC16-4D41E55A82A7%7D%26lang%3Den%26browser%3D5%26usagestats%3D0%26appname%3DGoogle%2520Chrome%26needsadmin%3Dtrue%26ap%3Dx64-stable-statsdef_0%26brand%3DGCEA/dl/chrome/install/googlechromestandaloneenterprise64.msi",
+    "DownloadText": "Downloading Chrome...",
+    "InstallText": "Installing Chrome...",
+    "InstallationType": "Msiexec",
+    "Arg": "/qn",
+    "IsHtmlParsing": "false",
+    "Balise": ""
+  },
+  "VLC": {
+    "RegistrationName": "VLC-installer.exe",
+    "Url": "https://download.videolan.org/vlc/last/win64/",
+    "DownloadText": "Downloading VLC...",
+    "InstallText": "Installing VLC...",
+    "InstallationType": "Exe",
+    "Arg": "/S",
+    "IsHtmlParsing": "true",
+    "Balise": "//a[8]"
+  },
+  "LibreOffice": {
+    "RegistrationName": "LibreOffice.msi",
+    "Url": "https://mirror.cyberbits.eu/tdf/libreoffice/stable/",
+    "DownloadText": "Downloading LibreOffice...",
+    "InstallText": "Installing LibreOffice...",
+    "InstallationType": "Msiexec",
+    "Arg": "/quiet RebootYesNo=No ALLUSERS=1 CREATEDESKTOPLINK=1 REGISTER_ALL_MSO_TYPES=1 ISCHECKFORPRODUCTUPDATES=1 QUICKSTART=1 ADDLOCAL=ALL UI_LANGS=fr_FR,fr",
+    "IsHtmlParsing": "true",
+    "Balise": "//a[2]"
+  },
+  "Office": {
+    "RegistrationName": "Office.exe",
+    "Url": "https://c2rsetup.officeapps.live.com/c2r/download.aspx?productReleaseID=O365ProPlusRetail&platform=Def&language=fr-fr&TaxRegion=db&correlationId=10334adb-d96a-4c31-b9d4-f7a7737d4f9c&token=0144b64d-df33-4b4a-a7a9-e325e5eefca1&version=O16GA&source=O15OLSO365&Br=2",
+    "DownloadText": "Downloading Office 365...",
+    "InstallText": "Installing Office 365...",
+    "InstallationType": "Exe",
+    "Arg": "",
+    "IsHtmlParsing": "false",
+    "Balise": ""
+  },
+  "OpenOffice": {
+    "RegistrationName": "OpenOffice.exe",
+    "Url": "https://sourceforge.net/projects/openofficeorg.mirror/files/4.1.15/binaries/fr/Apache_OpenOffice_4.1.15_Win_x86_install_fr.exe/download",
+    "DownloadText": "Downloading OpenOffice",
+    "InstallText": "Installing OpenOffice",
+    "InstallationType": "Exe",
+    "Arg": "/S /v /qb RebootYesNo=No",
+    "IsHtmlParsing": "false",
+    "Balise": "//a[contains(@href, '/projects/openofficeorg.mirror/files/')]"
+  },
+  "zip": {
+    "RegistrationName": "7zip.msi",
+    "Url": "https://www.7-zip.org/a/7z2301-x64.msi",
+    "DownloadText": "Downloading 7zip...",
+    "InstallText": "Installing 7zip...",
+    "InstallationType": "Msiexec",
+    "Arg": "/qn",
+    "IsHtmlParsing": "false",
+    "Balise": ""
+  },
+  "Reader": {
+    "RegistrationName": "Acrobat.exe",
+    "Url": "https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2400221005/AcroRdrDC2400221005_fr_FR.exe",
+    "DownloadText": "Downloading Acrobat Reader...",
+    "InstallText": "Installing Acrobat Reader...",
+    "InstallationType": "Exe",
+    "Arg": "/sAll /rs /msi ADDLOCAL=ALL LANG_LIST=fr_FR EULA_ACCEPT=YES IW_DEFAULT_VERB=Open",
+    "IsHtmlParsing": "false",
+    "Balise": ""
+  },
+  "EOEM": {
+    "RegistrationName": "Eset.zip",
+    "Url": "https://web.eset-nod32.fr/public/download/eset_live_installer_partenaires.zip",
+    "DownloadText": "Downloading Eset OEM...",
+    "InstallText": "Installing Eset OEM...",
+    "InstallationType": "Exe",
+    "Arg": "",
+    "IsHtmlParsing": "false",
+    "Balise": ""
+  },
+  "ECloud": {
+    "RegistrationName": "ECloud.exe",
+    "Url": "https://redirector.eset.systems/li-handler/?uuid=epi_win-e98890b7-f5e6-44c5-a738-0be9e21e792d",
+    "DownloadText": "Downloading Eset Cloud...",
+    "InstallText": "Installing Eset Cloud...",
+    "InstallationType": "Exe",
+    "Arg": "--accept-eula --silent",
+    "IsHtmlParsing": "false",
+    "Balise": ""
+  },
+  "Datto": {
+    "RegistrationName": "Datto.exe",
+    "Url": "https://merlot.centrastage.net/csm/profile/downloadAgent/0d89fe5b-98fb-4d53-8d1d-645e9508bf07",
+    "DownloadText": "Downloading Datto...",
+    "InstallText": "Installing Datto...",
+    "InstallationType": "Exe",
+    "Arg": "",
+    "IsHtmlParsing": "false",
+    "Balise": ""
+  },
+  "Intel": {
+    "RegistrationName": "Intel.exe",
+    "Url": "https://dsadata.intel.com/installer",
+    "DownloadText": "Downloading Intel Drivers...",
+    "InstallText": "Installing Intel Drivers...",
+    "InstallationType": "Exe",
+    "Arg": "/S",
+    "IsHtmlParsing": "false",
+    "Balise": ""
+  },
+  "Thunderbird": {
+    "RegistrationName": "Thunderbird.msi",
+    "Url": "https://download.mozilla.org/?product=thunderbird-128.3.2esr-msi-SSL&os=win64&lang=fr",
+    "DownloadText": "Downloading Thunderbird...",
+    "InstallText": "Installing Thunderbird...",
+    "InstallationType": "Msiexec",
+    "Arg": "/qn",
+    "IsHtmlParsing": "false",
+    "Balise": ""
+  }
+}
