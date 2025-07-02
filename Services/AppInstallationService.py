@@ -1,30 +1,39 @@
 import subprocess
 import os
 
+from Services.gui_utils import edit_textbox_installing, create_error_window
 
-def install_executable(filepath, filetype, silent_args=None):
+
+def install_executable(app_name, app_data, textbox):
     """
     Installe un exécutable (.exe ou .msi) en mode silencieux.
 
-    :param filepath: Chemin complet du fichier exécutable
-    :param silent_args: Liste d'arguments pour installation silencieuse (ex: ["/S"] ou ["/quiet"])
+    :param app_name: Nom du logiciel à installer
+    :param app_data: Data contenu dans software.json
+    :param textbox: Texte du installer
     :return: Code de retour du processus (0 = succès)
     """
-    if not os.path.exists(filepath):
-        print(f"Fichier non trouvé : {filepath}")
-        return -1
+    try:
+        filetype = app_data['InstallationType']
+        silent_args = app_data['Arg']
+        temp_dir = os.environ["TEMP"]
+        filepath = os.path.join(temp_dir, "utils", app_data['RegistrationName'])
 
-    if not silent_args:
-        # Choix par défaut selon l'extension
-        if filepath.endswith(".exe"):
-            silent_args = ["/S"]  # très courant
-        elif filepath.endswith(".msi"):
-            silent_args = ["/quiet", "/norestart"]
-        else:
-            print("Extension de fichier non prise en charge.")
+        if not os.path.exists(filepath):
+            print(f"Fichier non trouvé : {filepath}")
             return -1
 
-    try:
+        if not silent_args:
+            # Choix par défaut selon l'extension
+            if filepath.endswith(".exe"):
+                silent_args = ["/S"]  # très courant
+            elif filepath.endswith(".msi"):
+                silent_args = ["/quiet", "/norestart"]
+            else:
+                print("Extension de fichier non prise en charge.")
+                return -1
+
+        edit_textbox_installing(textbox, app_name)
         print(f"▶Lancement de l'installation de {os.path.basename(filepath)}...")
         if filetype == "Msiexec":
             result = subprocess.run(["msiexec", "/i", filepath] + silent_args.split(), check=True)
@@ -36,6 +45,6 @@ def install_executable(filepath, filetype, silent_args=None):
 
         print(f"Installation terminée (code {result.returncode})")
         return result.returncode
-    except subprocess.CalledProcessError as e:
-        print(f"Erreur lors de l'installation : {e}")
-        return e.returncode
+    except Exception as e:
+        create_error_window(e)
+        return -1

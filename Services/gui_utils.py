@@ -31,3 +31,45 @@ def create_checkboxes(frame, app_vars):
 def create_validate_button(root, on_validate):
     btn = tk.CTkButton(root, text="Validate", command=on_validate)
     btn.pack(pady=10)
+
+# Create Textbox
+def create_textbox(root):
+    textbox = tk.CTkTextbox(root, width=300, height=20)
+    textbox.pack(padx=1, pady=1)
+    textbox.insert(tk.END, text='Cochez les cases pour installer les logiciels')
+    textbox.configure(state=tk.DISABLED)
+    return textbox
+
+def edit_textbox_downloading(textbox):
+    textbox.configure(state=tk.NORMAL)
+    textbox.delete(1.0, tk.END)
+    textbox.insert(tk.END, "Téléchargement de(s) logiciel(s)")
+    textbox.configure(state=tk.DISABLED)
+
+def edit_textbox_installing(textbox, app_name):
+    textbox.configure(state=tk.NORMAL)
+    textbox.delete(1.0, tk.END)
+    textbox.insert(tk.END, "Installation de " + app_name)
+    textbox.configure(state=tk.DISABLED)
+
+def edit_textbox_finishing(textbox):
+    textbox.configure(state=tk.NORMAL)
+    textbox.delete(1.0, tk.END)
+    textbox.insert(tk.END, "Installation terminée")
+    textbox.configure(state=tk.DISABLED)
+
+def create_error_window(error_message):
+    error_window = tk.CTk()
+    error_window.title("Erreur")
+    error_window.resizable(False, False)
+    error_window.geometry("300x150")
+    error_window.configure(fg_color="#ffffff")
+
+    label = tk.CTkLabel(error_window, text=error_message, text_color="red", wraplength=280)
+    label.pack(padx=20, pady=30)
+
+    # Optional: bouton pour fermer
+    close_btn = tk.CTkButton(error_window, text="Fermer", command=error_window.destroy)
+    close_btn.pack(pady=10)
+
+    error_window.mainloop()  # à utiliser seulement si c’est une fenêtre indépendante
